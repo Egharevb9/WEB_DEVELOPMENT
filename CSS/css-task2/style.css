@@ -6,9 +6,9 @@ ul {
     /* background: linear-gradient(to right, #00c6ff, grey); */
     display: flex;
     padding: 2%;
-    /* align-content: center; */
-    /* justify-content: center; */
-    gap: 5%;
+    align-content: center; 
+    justify-content: center;
+    gap: 10%;
     /* position: sticky; */
     list-style: none;
     color: white;
@@ -34,8 +34,8 @@ ul {
     justify-content: center;
     align-content: center;
     justify-content: space-between;
-    gap: 5%;
-    /* position: fixed; */
+    gap: 5%; */
+    position: fixed;
     top: 0;
     list-style: none;
     color: white;
@@ -115,7 +115,7 @@ ul {
         background-color: #00c6ff;
     }
     
-    /* Navigation layout */
+
     .demo-nav {
         display: flex;
         justify-content: space-between;
