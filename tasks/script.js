@@ -1,32 +1,39 @@
 
-        // function PersonalInformation() {
-        //     let FirstName = "Esther";
-        //     let LastName = "Egharevba";
-        //     let Age = 20;
-        //     let SchoolName = true;
-        //     let grade = A;
-        //     let isGraduated = true;
+        function PersonalInformation() {
+            let FirstName = "Esther";
+            let LastName = "Egharevba";
+            let Age = 20;
+            let SchoolName = true;
+            let grade = A;
+            let isGraduated = true;
 
 
            
 
 
             
-        //     let Greet =  `Hello, my name ${FirstName}, lastname = ${LastName}  `; 
-        //     let information2 = ` age = i am ${Age} years old, ls student = ${SchoolName} grade = ${grade}` `graduate :`,${isGraduated};
-        //     let FullName =" Esther Egharevba"
-           
-        // }
+             let Greet =  `Hello, my name ${FirstName}, lastname = ${LastName}  `; 
+            let information2 = ` age = i am ${Age} years old, ls student = ${SchoolName} grade = ${grade}` `graduate :, ${isGraduated} `;
+            let FullName =" Esther Egharevba"
+
+
+        
+
+            let output = `
+            console.log("-----------Student Profile----");
+            <strong> Arithmetic operator</strong> <br><br>
+            firstname = ${FirstName}, last name= ${LastName} <br> <br>
+            age = ${Age} <br>
+            school name =  ${SchoolName} <br>
+            grade = ${grade} <br>
+            isgraduate = ${isGraduated} <br>
+            `;
+         document.getElementById("PersonalDetail").innerHTML = output; 
+        }
         
        
        
-        // console.log("-----------Student Profile----");
-
-        // console.log(`name:`, firstname , `last name:`, LastName).Uppercase;
-        // console.log(`my fullname are : ${FullName.length}` );
-        // console.log(`name:`, firstname , `last name:`, LastName);
-        // console.log(`age`,${Age} + 5);
-
+       
 function run(){
     let num1 =  Number(prompt("Enter a number")) 
     let num2 =  Number(prompt("Enter a number"))
@@ -37,7 +44,7 @@ function run(){
     let Division = num1 /  num2;
 
 
-    let output = `
+    let outputs = `
     <strong> Arithmetic operator</strong> <br><br>
     num1 = ${num1}, num2= ${num2} <br> <br>
     Addition (num1 + num2): ${Addition} <br>
@@ -50,7 +57,7 @@ function run(){
 
 
 
-    document.getElementById('operator_output').innerHTML = output
+    document.getElementById('operator_output').innerHTML = outputs;
          
 
            
