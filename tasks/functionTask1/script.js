@@ -1,6 +1,6 @@
 let score = 90;
 
-function getGrade() {
+function getGrade(score) {
     if (score >= 100){
         console.log("outstanding! Grade: A+")
     } else if(score >= 90){
@@ -73,7 +73,7 @@ console.log(`${advice}`)
 let balance = 15000;
 function atm( balance, action, amount){
     if (action === "withdraw"){
-        if (amount > balance){
+        if (amount > balance){  
             console.log("Insufficient funds");
             return balance;
         } else if (amount > 500){

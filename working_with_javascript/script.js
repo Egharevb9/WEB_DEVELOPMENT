@@ -115,3 +115,165 @@ function showCurrentTime() {
     console.log(`current time: ${now.tolocaleTimeString()}`);
 
 }
+// javascript_2b
+const calculateTax = function(amount, rate){
+    return amount * rate;
+};
+console.log("Tax on $100v at 8.5%:", `calculate `, calculateTax(100, 0.085));
+
+
+// working with Array
+
+// Creating Arrays
+let fruits =["apple", "banana", "orange", "grape",]
+let numbers = [10, 25, 30, 45, 50];
+let booleans = [true, false, true , true];
+let mixedArray = ["John", 25, true, "student"];
+
+// Empty array
+let emptyArray  = [];
+
+// Display the arrays
+console.log("Fruits array:", fruits);
+console.log("Numbers array:", numbers);
+console.log("Mixed array:", mixedArray);
+console.log("Empty array:", emptyArray);
+
+
+console.log("");      //Empty line 
+
+
+// Array length property
+console.log("Number of fruits:", fruits.length);
+console.log("Number of numbers:", numbers.length);
+console.log("Empty array length:", emptyArray.length);
+
+
+console.log("");   // Empty line
+
+// Accessing individual elements with index [0, 1, 2, .....]
+console.log("First fruit:", fruits[0]);   //Apple
+console.log("Second fruit:", fruits[1]);   // banana
+console.log("Last fruit:", fruits[fruits.length - 1]);   //grape
+
+console.log("first number :", numbers[0]);  // 10
+console.log("Third number :", numbers[2]);  // 30
+
+// what happen with invalid indexes?
+console.log("index that doesn't exits:", fruits[10]);   //undefined 
+
+// modifying Arrays
+
+let colors = ["red", "green", "blue"];
+console.log("original colors:", colors);
+
+// changing existing elements
+colors[0] = "purple";
+colors[2] = "yellow";
+console.log("After changes:", colors);
+
+
+console.log("");   // Empty line
+
+
+// addibg elements to the end  with push()
+let shoppinglist = ["milk", "bread"];
+console.log("original list:", shoppinglist);
+
+
+shoppinglist.push("egg")
+shoppinglist.push("cheese", "butter"); // can add multiple items
+console.log("After adding items: ", shoppinglist);
+
+
+console.log("");   // Empty line
+
+
+//  Removing the last element with pop()
+let removedItem = shoppinglist.pop();  // pop() return  the removed item
+console.log("Remove item: ", removedItem);
+console.log("list after removing:", shoppinglist);
+
+
+console.log("");   // Empty line
+
+
+// Removing the first element with unshift()
+let firstItem = shoppinglist.shift();
+console.log("Removed first item:",  firstItem);
+console.log("final list:", shoppinglist);
+
+console.log("");   // Empty line
+
+
+//  finding elements
+let student = ["Alice", "Bob", "Charlie", "Diana"];
+console.log("students:", student);
+console.log("Is Bob in  class?", student.includes("Bob"));
+console.log("Where is charlie?", student.indexOf("charlie"));
+console.log("Where is frank?", student.indexOf("frank"));  // -1 means not found
+
+
+
+// More Array Method
+let number  = [ 1, 2, 3, 4, 5];
+let names = ["John", "Jane", "Bob", "Alice"];
+
+
+
+console.log("original numbers: ", number);
+console.log("original names: ", names);
+
+console.log("");   // Empty line
+
+//  slice() - Get a portion of the array (doesn't change original)
+let firstThree = number.slice(0,3);    // Get items 0, 1, 2
+let LastTwo = number.slice(- 2);    // Get last  2 items
+
+
+console.log("First three numbers: ", firstThree);
+console.log("Last two numbers: ", LastTwo);
+console.log("Original unchanged: ", number);
+
+console.log("");   // Empty line
+
+
+// splice() -  Remove/add items at specific position (changes original)
+let  fruit = ["apple", "banana", "Orange","grape", "kiwi"]
+console.log("Original fruits:", fruit);
+
+
+// remove 2 items starting at index 1
+let remove = fruit.splice(1, 2);
+console.log("Removed items:", remove);
+console.log("After Removal :", fruit);
+
+// Add items at index 1
+fruit.splice(1, 0, "Mango", "Pineaple"); // Remove 0, add 2 items
+console.log("after adding:", fruit);
+
+console.log("");   // Empty line
+
+// join() - convert array to string 
+let words = ["Hello", "from", "Javascript"];
+let sentence = words.join(" ");   // Join with space
+let csv = words.join(",");        // join with commas
+console.log("words array:", words);
+console.log("As sentence:", sentence);
+console.log("As csv:", csv)
+
+console.log("");   // Empty line
+
+//  split() - convert string to array (string method , but creates arrays)
+let  message = "apple, banana, orange";
+let fruitArray = message.split(",");
+console.log("String:", message);
+console.log("Split into array:", fruitArray);
+
+
+
+// reverse() - Reverse array order (changes original)
+let countdown = [1,  2,  3,  4, 5 ];
+console.log("Original countdown: ", countdown);
+countdown.reverse();
+console.log("Reversed countdown: ", countdown);
