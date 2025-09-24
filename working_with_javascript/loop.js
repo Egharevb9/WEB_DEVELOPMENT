@@ -21,8 +21,8 @@ console.log("");   //Empty line
 
 // using  loops with calculatons
 console.log("Multiplication table for 3:");
-for (let i = 1;  i<= 10; i++){
+for (let i = 1;  i <= 10; i++){
     let result = 3 * i;
-    console.log
-
+    console.log(`3 x ${i} = ${result}`);
 }
+console.log("");   //Empty line
