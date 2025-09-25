@@ -277,3 +277,20 @@ let countdown = [1,  2,  3,  4, 5 ];
 console.log("Original countdown: ", countdown);
 countdown.reverse();
 console.log("Reversed countdown: ", countdown);
+
+
+
+let fruitss = ["apple", "banana", "orange", "grape"];
+
+console.log("Using for...of loop:");
+for (let fruit of fruitss) {
+    console.log("I like", fruitss);
+}
+
+console.log(""); // Empty line
+
+// Compare with traditional for loop
+console.log("Using traditional for loop:");
+for (let i = 0; i < fruitss.length; i++) {
+    console.log("I like", fruitss[i]);
+}
