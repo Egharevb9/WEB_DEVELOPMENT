@@ -7,6 +7,6 @@ let remove =  shoppingList.shift();
 console.log("shopping list ", shoppingList );
 console.log("total Number of  items ", shoppingList);
 
-shoppingList.forEach(function(item){
-    console.log(" item:", item);
-});
+for (let i = 0; i < shoppingList.length; i++){
+    console.log(` ${i + 1}: ${shoppingList[i]}`);
+}
