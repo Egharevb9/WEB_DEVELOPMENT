@@ -36,3 +36,31 @@ console.log("Student grade :", student.grade);
  };
  console.log("car info:");
  console.log(`car: ${car.year} ${car.make} ${car.model} (${car.color})`);
+
+
+ // creating  objects
+ let person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30,
+    city: "Boston"
+ };
+ let product = {
+    name : "laptop",
+    price : 999,
+    inStock: true,
+    category: "Electronics"
+ };
+ console.log("person object:", person);
+ console.log("product object:", product);
+ console.log(""); // Empty line
+
+ // two ways to acces properties:
+
+ // 1. Dot notation (most common)
+ console.log("using dot notation:");
+ console.log("firstName:", person.firstName);
+ console.log("product name:", product.name);
+ console.log("product price:", product.price);
+
+ console.log("") // Empty line
