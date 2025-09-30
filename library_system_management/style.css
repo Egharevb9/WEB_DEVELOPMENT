@@ -68,3 +68,50 @@ nav ul li a:hover {
      background: linear-gradient(to right, navy, grey);
 
 }
+.welcome{
+    color: white;
+    text-align: center;
+    justify-self: center;
+    font-size: 90px;
+}
+
+.landing{
+    width: auto;
+    height: 100vh;
+    background-image: url(./Imagem\ de\ ia\ generativa\ de\ estantes\ em\ u….jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* position: sticky;
+    top: 20px; */
+    background-color:rgba(0, 0, 0, 0.5) ;
+    z-index: 10;
+    background-blend-mode: darken;
+    /* display: flex; */
+    align-content: center;
+    justify-content: center;
+    
+}
+.a{
+    font-size: 190px;
+  
+  
+}
+/* .welcome a :hover{
+color: linear-gradient(to right, navy, grey); */
+/* } */
+.txt{
+    margin-top: 25px;
+    font-size: 40px;
+    color: white;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+}
+.main-content{
+   width: 100%;
+   padding: 200px 0px;
+   height: fit-content;
+   background-color: blue;
+   color: white;
+}
