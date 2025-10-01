@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Library</title>
+  <style>
+    .movie {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Top Rated Movies</h1>
+  <div id="movie-list"></div>
+
+  <script>
+    
+    let movie = {
+      title: "Inception",
+      director: "Christopher Nolan",
+      releaseYear: 2010,
+      rating: 9,
+      getSummary: function() {
+        return `${this.title} (${this.releaseYear}), directed by ${this.director}, rated ${this.rating}/10`;
+      }
+    };
+
+    
+    movie.isWatched = true;
+
+    let movies = [
+      movie,
+      {
+        title: "The Matrix",
+        director: "The Wachowskis",
+        releaseYear: 1999,
+        rating: 8.7,
+        getSummary: function() {
+          return `${this.title} (${this.releaseYear}), directed by ${this.director}, rated ${this.rating}/10`;
+        },
+        isWatched: true
+      },
+      {
+        title: "Twilight",
+        director: "Catherine Hardwicke",
+        releaseYear: 2008,
+        rating: 5.2,
+        getSummary: function() {
+          return `${this.title} (${this.releaseYear}), directed by ${this.director}, rated ${this.rating}/10`;
+        },
+        isWatched: false
+      }
+    ];
+
+    function showTopRated(movies) {
+      let topMovies = movies.filter(moviess => moviess.rating >= 8);
+      let output = "";
+
+      topMovies.forEach(moviess => {
+        output += `<div class="movie">${moviess.getSummary()}</div>`;
+      });
+
+      document.getElementById("movie-list").innerHTML = output;
+    }
+
+    showTopRated(movies);
+  </script>
+</body>
+</html>

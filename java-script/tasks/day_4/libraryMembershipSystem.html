@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library Member</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>📖 Member Info</h1>
+  <div id="member-info"></div>
+
+  <script>
+   
+    let member = {
+      name: "Esther",
+      membershipType: "premium", 
+      borrowedBooks: [],
+
+      
+      borrowBook: function(book) {
+        this.borrowedBooks.push(book);
+      },
+
+      getBorrowedCount: function() {
+        return this.borrowedBooks.length;
+      },
+
+      
+      getMembershipInfo: function() {
+        if (this.membershipType === "premium") {
+          return `${this.name} is a Premium member with access to unlimited borrowing and exclusive resources.`;
+        } else {
+          return `${this.name} is a Basic member with limited borrowing privileges.`;
+        }
+      }
+    };
+
+   
+    member.borrowBook("The Alchemist");
+    member.borrowBook("Atomic Habits");
+    member.borrowBook("Becoming");
+
+   
+    let output = `
+      <p><strong>Name:</strong> ${member.name}</p>
+      <p><strong>Membership Type:</strong> ${member.membershipType}</p>
+      <p><strong>Borrowed Books:</strong> ${member.borrowedBooks.join(", ")}</p>
+      <p><strong>Total Borrowed:</strong> ${member.getBorrowedCount()}</p>
+      <p><strong>Membership Info:</strong> ${member.getMembershipInfo()}</p>
+    `;
+
+    document.getElementById("member-info").innerHTML = output;
+  </script>
+</body>
+</html>
