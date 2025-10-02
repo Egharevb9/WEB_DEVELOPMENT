@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart</title>
+</head>
+<body>
+  <h1> online shopping Cart </h1>
+  <div id="cart-items"></div>
+  <h2 id="cart-total"></h2>
+
+  <script>
+
+    function createCartItem(name, price, quantity) {
+      return {
+        name: name,
+        price: price,
+        quantity: quantity,
+        getTotal: function() {
+          return this.price * this.quantity;
+        }
+      };
+    }
+
+    let cart = [
+      createCartItem("Book", 15, 2),
+      createCartItem("Pen", 3, 5),
+      createCartItem("Notebook", 10, 3)
+    ];
+
+    function getCartTotal(cart) {
+      return cart.reduce((sum, item) => sum + item.getTotal(), 0);
+    }
+
+    let output = "";
+    cart.forEach(item => {
+      output += `<div class="item">${item.name} - ₦${item.price}  ${item.quantity} = ₦${item.getTotal()}</div>`;
+    });
+
+    document.getElementById("cart-items").innerHTML = output;
+    document.getElementById("cart-total").innerText = `Total: ₦${getCartTotal(cart)}`;
+  </script>
+</body>
+</html>

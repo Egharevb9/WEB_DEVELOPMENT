@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Shopping calculator</title>
+</head>
+<body>
+  <h1>My Shopping Calculator</h1>
+  <div id="shoppingcalculator"></div>
+  <div id="shopping-total"></div>
+
+
+  
+  <script>
+// Create an array with at least 3 cart items =>
+    let shoppingcalculator = [
+      {
+        name: "Fan",
+        price: 350000,
+        quantity: 1,
+        getTotal() { return this.price * this.quantity; }
+      },
+      {
+        name: "Air-conditioner",
+        price: 85000,
+        quantity: 2,
+        getTotal() { return this.price * this.quantity; }
+      },
+   {
+        name: "GasCooker",
+        price: 40000,
+        quantity: 3,
+        getTotal() { return this.price * this.quantity; }
+      }
+    ];
+    // Function to calculate total cost of all items =>
+    function getCartTotal(cart) {
+      return shoppingcalculator.reduce((sum, item) => sum + item.getTotal(), 0);
+    }
+
+
+
+    // Display items on the page =>
+    let cartDiv = document.getElementById("shoppingcalculator");
+cart.forEach(item => {
+      let p = document.createElement("p");
+      p.textContent = `${item.name} - ₦${item.price} x ${item.quantity} = ₦${item.getTotal()}`;
+      cartDiv.appendChild(p);
+    });
+
+
+
+    // Display total =>
+    document.getElementById("shopping-total").textContent =
+      "Total Cart Value: ₦" + getCartTotal(shoppingcalculator);
+  </script>
+</body>
+     <style>
+        body{
+            background-color: rgb(209, 216, 214);
+        }
+     </style>
+</html>
