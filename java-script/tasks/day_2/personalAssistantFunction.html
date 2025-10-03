@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Esther's Personal Assistant</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3e8f5; 
+      color: #4b3b5a;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #6a4c93;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    select, input {
+      padding: 8px;
+      margin-top: 5px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #b185db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #9c6cd3;
+    }
+
+    .response {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #fff;
+      border-left: 5px solid #b185db;
+      border-radius: 5px;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💬 Esther's Personal Assistant</h1>
+
+  <label for="hour"></label>
+  <input type="number" id="hour" min="0" max="23" placeholder="e.g. 14 for 2pm">
+
+  <label for="weather">select your weather</label>
+  <select id="weather">
+    <option value="sunny">Sunny</option>
+    <option value="rainy">Rainy</option>
+    <option value="cloudy">Cloudy</option>
+  </select>
+
+  <label for="dayType">select the day</label>
+  <select id="dayType">
+    <option value="workday">Workday</option>
+    <option value="weekend">Weekend</option>
+    <option value="holiday">Holiday</option>
+  </select>
+
+  <button onclick="getAdvice()">Get Advice</button>
+
+  <div class="response" id="adviceBox"></div>
+
+  <script>
+    function personalAssistant(hour, weather, dayType) {
+      if (typeof hour !== 'number' || hour < 0 || hour > 23) {
+        return "that hour doesn't exist ,select  between 0 and 23.";
+      }
+
+      const validWeather = ['sunny', 'rainy', 'cloudy'];
+      const validDayTypes = ['workday', 'weekend', 'holiday'];
+
+      if (!validWeather.includes(weather) || !validDayTypes.includes(dayType)) {
+        return " I need proper weather (sunny, rainy, cloudy) and day type (workday, weekend, holiday). try again!";
+      }
+
+      if (hour >= 5 && hour <= 9) {
+        if (dayType === 'workday') {
+          return weather === 'rainy'
+            " get your umbrella"
+            " Rise and shine!"
+        } else {
+          return dayType === 'weekend'
+            "Enjoy your weekend."
+            "Enjoy your Holiday."
+        }
+      }
+
+      if (hour >= 12 && hour <= 15) {
+        if (dayType === 'workday' && weather !== 'rainy') {
+          return " you have to work";
+        } else if (dayType === 'weekend' || dayType === 'holiday') {
+          return weather === 'sunny'
+          " Enjoy your day"
+        }
+      }
+
+      if (hour >= 18 && hour <= 21) {
+        return dayType === 'workday'
+           " You did great today."
+          
+      }
+
+      if (hour >= 22 || hour < 5) {
+        return hour >= 22
+          
+      };
+
+      return " you are doing  well";
+    }
+
+    function getAdvice() {
+      const hour = parseInt(document.getElementById('hour').value);
+      const weather = document.getElementById('weather').value;
+      const dayType = document.getElementById('dayType').value;
+
+      const message = personalAssistant(hour, weather, dayType);
+      document.getElementById('adviceBox').textContent = message;
+    }
+  </script>
+
+</body>
+</html>
+</body>
+</html>
