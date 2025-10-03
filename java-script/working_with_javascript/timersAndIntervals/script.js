@@ -53,42 +53,57 @@ showNotification("welcome !");
 let counter = 0;
 //this runs every 1 second
 
-let intervalid = setInterval(function () {
-    counter++;
-    console.log("counter: ", counter);
+// let intervalid = setInterval(function () {
+//     counter++;
+//     console.log("counter: ", counter);
 
-    // stop after  5 times
-    if (counter  >= 5){
-        clearInterval(intervalid);
-        console.log("stopped !");
-    }
-},1000);
+//     // stop after  5 times
+//     if (counter  >= 5){
+//         clearInterval(intervalid);
+//         console.log("stopped !");
+//     }
+// },1000);
 
-let  clockInterval = null;
+// let  clockInterval = null;
 
-function updateClock() {
-    //get current time
-    let now = new Date();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-    let seconds = now.getSeconds();
+// function updateClock() {
+//     //get current time
+//     let now = new Date();
+//     let hours = now.getHours();
+//     let minutes = now.getMinutes();
+//     let seconds = now.getSeconds();
 
-    // add leading Zeros
-    if (hours < 10) hours = "0" + hours;
-    if (minutes < 10) minutes = "0" + minutes;
-    if (seconds < 10) seconds = "0" + seconds;
+//     // add leading Zeros
+//     if (hours < 10) hours = "0" + hours;
+//     if (minutes < 10) minutes = "0" + minutes;
+//     if (seconds < 10) seconds = "0" + seconds;
 
-    // Display time
-    let timeString = hours + ":" + minutes + ":" + seconds;
+//     // Display time
+//     let timeString = hours + ":" + minutes + ":" + seconds;
 
-    document.getElementById('clockDisplay').textContent = timeString;
+//     document.getElementById('clockDisplay').textContent = timeString;
+// }
+// function startClock(){
+//     updateClock(); // show time immediately
+//     clockInterval = setInterval(updateClock, 1000); // update every second
+// }
+// function stopClock(){
+//     clockInterval(clockInterval);
+// }
+// // start automatically
+// startClock();
+
+function startcountdown(seconds){
+    let timeLeft = seconds;
+    console.log("countdown started:", timeLeft);
+    let countdownId = setInterval(function(){
+        timeLeft --;
+        console.log("time left: ", timeLeft)
+      if(timeLeft <= 0){
+        clearInterval(countdownId);
+        console.log("Time's up");
+      }  
+    },1000);
 }
-function startClock(){
-    updateClock(); // show time immediately
-    clockInterval = setInterval(updateClock, 1000); // update every second
-}
-function stopClock(){
-    clockInterval(clockInterval);
-}
-// start automatically
-startClock();
+
+startcountdown(10);

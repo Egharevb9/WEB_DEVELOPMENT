@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+</head>
+<body>
+   
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    p {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 10px;
+      color: rgba(198, 156, 223, 0.897);
+    }
+   
+  </style>
+</head>
+<body>
+  <p id="myText">life comes with it's own tests!</p>
+  <button onclick="changeColor()">Color Changer</button>
+  <script>
+    // List of preset colors
+    let textColors = ["pink", "black", "green", "purple", "blue"];
+    let bgColors   = ["navyblue", "skyblue", "lilac", "pink", "beige"];
+    let index = 0; // start from first color
+    function changeColor() {
+      const text = document.getElementById("myText");
+      // change text color
+      text.style.color = textColors[index];
+      // change background color
+      document.body.style.backgroundColor = bgColors[index];
+      // move to the next color
+      index++;
+      // if we reach the end, start again
+      if (index >= textColors.length) {
+        index = 0;
+      }
+    }
+  </script>
+</body>
+</html>
+    
+</body>
+</html>
