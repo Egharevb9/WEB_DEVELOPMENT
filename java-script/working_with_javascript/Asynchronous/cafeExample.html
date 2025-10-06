@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // simulate order processing with callbacks
+        function placeOrder(orderDetails, successCallback, errorCallback){
+            console.log("processing order: ", orderDetails);
+
+            setTimeout(() => {
+                // simulate success or failure
+                let ordersuccessful = Math.random() > 0.2; // 80 % success rate
+
+                if (ordersuccessful){
+                    successCallback({
+                        orderId  : 12345,
+                        message: "order placed successfully !"
+                    });
+                }else{
+                    errorCallback("payment failed. please try again.")
+                }
+            },2000);
+        }
+
+        // use the function
+        placeOrder(
+            {item: "Latte", quantity: 2 },
+            function(result){
+                console.log("success:", result.message);
+                console.log("order ID: ", result.orderId);
+            },
+            function(error){
+                console.log("Error: ", error);
+            }
+        );
+    </script>
+</body>
+</html>

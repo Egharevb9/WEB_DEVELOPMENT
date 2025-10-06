@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let pizzaOrder = new Promise((resolve, reject) => {
+            let ovenWorking = true;  // try changing this to false
+            if (ovenWorking){
+                resolve("your pizza is ready 🍕 "); // Fulfilled
+            } else{
+                reject("Sorry, the oven is broken 😢"); // Rejected
+            }
+        });
+
+        // using the promise
+        pizzaOrder
+        .then(message => {
+            console.log("Success: ", message);
+        })
+        .catch(error => {
+            console.log("Error:", error);
+        });
+
+        function getmenuItems() {
+            return new Promise(function(resolve, reject){
+                console.log("Fetching menu items ....");
+
+
+                setTimeout(() => {
+                    let menuItems = ["Coffee", "Sandwich", "Cake"];
+                    resolve(menuItems); // success!
+                }, 2000);
+            });
+        }
+
+        // use the promise
+        getmenuItems()
+            .then(function(items){
+                console.log("Got items:", items);
+            })
+            .catch(function(error){
+                console.log("Error", error);
+            });
+            console.log("this runs while witing...")
+    </script>
+    
+</body>
+</html>
