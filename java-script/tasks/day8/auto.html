@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Image Gallery</title>
+  <style>
+    #gallery {
+      width: 500px;
+      height: 300px;
+      margin: 20px auto;
+      border: 2px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    #gallery img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    #controls {
+      text-align: center;
+      margin-top: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      margin: 0 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="gallery">
+  <img id="slideshow" src="https://via.placeholder.com/500x300?text=Image+1" alt="Gallery Image">
+</div>
+
+<div id="controls">
+  <button onclick="pauseSlideshow()">Pause</button>
+  <button onclick="resumeSlideshow()">Resume</button>
+</div>
+
+<script>
+  const images = [
+    "https://via.placeholder.com/500x300?text=Image+1",
+    "https://via.placeholder.com/500x300?text=Image+2",
+    "https://via.placeholder.com/500x300?text=Image+3",
+    "https://via.placeholder.com/500x300?text=Image+4",
+    "https://via.placeholder.com/500x300?text=Image+5"
+  ];
+
+  let currentIndex = 0;
+  let intervalId;
+
+  function showNextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById("slideshow").src = images[currentIndex];
+  }
+
+  function startSlideshow() {
+    intervalId = setInterval(showNextImage, 3000);
+  }
+
+  function pauseSlideshow() {
+    clearInterval(intervalId);
+  }
+
+  function resumeSlideshow() {
+    pauseSlideshow(); // Clear any existing interval
+    startSlideshow();
+  }
+
+  // Start the slideshow on page load
+  window.onload = startSlideshow;
+</script>
+
+</body>
+</html>
