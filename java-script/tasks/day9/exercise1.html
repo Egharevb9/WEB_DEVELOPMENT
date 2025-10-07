@@ -6,6 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id=" output">
+
+    </div>
+    <script>
+         function tellJoke() {
+            return new Promise(function(resolve, reject) {
+                console.log;("funny joke is loading!.....")
+                setTimeout(() => {
+                    let jokes = [" here is the funny joke"]
+                    resolve(jokes)
+            },3000);
+        });
+    }
+    tellJoke()
+    .then(function(items){
+        console.log("jokes:", joke);
+    })
+    .catch(function(error){
+        console.log("Error:", error)
+    });
+    tellJoke()
+    </script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiple Async</title>
+</head>
+<body>
+    <script>
+        function getMenuItems(){
+            return new Promise((resolve) => {
+                setTimeout(() => resolve({items, inStock: true}), 1000);
+
+                });
+        }
+        function calculatePrice(stockInfor){
+            return new Promise((resolve) => {
+                setTimeout(() => resolve ({...stockInfor, total: 12.50}), 1000);
+            });
+        }
+        // using async/ await - much cleaner!
+        async function processOrder() {
+            console.log("Starting order.....");
+            
+
+            let items = await getMenuItems();
+            console.log("Got items:", items);
+
+
+            let stockInfor = await checkStock( items);
+            console.log("checked stock:", stockInfor);
+
+            let finalOrder = await calculatePrice(stockInfor);
+            console.log("final order:", finalOrder);
+
+            return finalOrder;
+        }
+        // calling the async function
+        processOrder()
+    </script>
+    
+</body>
+</html>

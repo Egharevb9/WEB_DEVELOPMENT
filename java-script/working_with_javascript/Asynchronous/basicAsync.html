@@ -6,6 +6,32 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+        // function that returns a promise
+        function getMenuItems() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(["Coffee", "Sanwich", "Cake"]);
+                }, 2000);
+            });
+        }
+
+        // Traditional promise way
+        getMenuItems().then(items =>{
+            console.log("Items", items);
+        });
+
+
+        //  Async / await (cleaner!)
+        async function displayMenu() {
+            console.log("Fetching menu......");
+
+            let items = await getMenuItems(); // wait for the promise
+
+            console.log("items", items);
+            
+        }
+    </script>
     
 </body>
 </html>
