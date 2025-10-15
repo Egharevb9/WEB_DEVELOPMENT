@@ -6,6 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="order"></div>
+    <script>
+        
+       function  orders(){
+        return new Promise((resolve) =>{
+            setTimeout(() => resolve(["coffee", "cake", "juice"]),1000);
+        });
+       }
+       function checkStock( order){
+        return new Promise((resolve) => {
+            setTimeout(() => resolve({order, inStock: true}), 1000);
+        });
+       }
+       async function processOrders() {
+        const orderList = await orders();
+        for (const item of orderList) {
+            await new Promise((resolve) => {
+                setTimeout(resolve, 2000);
+                console.log(`order: ${item} is ready`);
+                document.getElementById("order: ").innerHTML += ` order: ${item} is ready <br>`;
+            })
+
+        }
+        
+       }
+       processOrders()
+    </script>
 </body>
 </html>

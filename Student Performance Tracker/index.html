@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Student Performance Tracker</title>
+</head>
+<body>
+   <body>
+  <div class="main-cont">
+    <div class="main">
+      <form class="form" id="studentForm">
+        <img id="studentImage" src="" alt="Student Image" />
+        
+        <label class="firstname" for="firstName">First Name</label>
+        <input class="firstname-input" type="text" id="firstName" name="firstName" placeholder="First Name"/>
+
+        <label class="middlename" for="middleName">Middle Name</label>
+        <input class="middlename-input" type="text" id="middleName" name="middleName" placeholder="Middle Name"/>
+
+        <label class="lastName" for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name"/>
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age"/>
+
+        <label for="class">Class</label>
+        <input type="text" id="class" name="class" placeholder="Student Class"/>
+
+        <label for="img">Image URL</label>
+        <input type="url" id="img" name="img" placeholder="Image URL"/>
+
+        <label for="css">CSS Score</label>
+        <input type="number" id="css" name="css" placeholder="CSS Score"/>
+
+        <label for="html">HTML5 Score</label>
+        <input type="number" id="html" name="html" placeholder="HTML Score"/>
+
+        <label for="js">JavaScript Score</label>
+        <input type="number" id="js" name="js" placeholder="JavaScript Score"/>
+
+        <button type="submit" id="submit">Submit</button>
+      </form>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Middle Name</th>
+          <th>Last Name</th>
+          <th>Age</th>
+          <th>Class</th>
+          <th>CSS</th>
+          <th>HTML5</th>
+          <th>JavaScript</th>
+          <th>Average</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody id="studentTable"></tbody>
+    </table>
+  </div>
+</body>
+</body>
+</html>

@@ -1,0 +1,125 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.main-cont{
+    background-color: cadetblue;
+    width: auto;
+    height: fit-content;
+    align-content: center;
+}
+.main{
+    width: 500px;
+    width: fit-content;
+    background-color: aqua;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+.firstname{
+    /* background-color: linear-gradient(to right, blue #6e7f80, #b0bec5);  */
+    padding: 15px; 
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+.firstname-input{
+    padding: 15px; 
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+.middlename{
+    padding: 15px; 
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+.middlename-input{
+    padding: 15px; 
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+.lastname{
+    padding: 15px; 
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+.lastname-input{
+    padding: 15px; 
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+.middlename-input{
+    padding: 15px; 
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+.middlename-input{
+    padding: 15px; 
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+.form{
+background-color: white;
+padding: 20px;
+border-radius: 8px;
+color:black 
+ 
+}
+.username{
+    display: block;
+    margin-bottom: 5px; 
+    font-weight: bold;
+}
+.input1{
+   width: 70%;
+    padding: 8px;
+     border: 2px solid #ddd; 
+     border-radius: 4px;
+}
+.input2{
+    width: 70%; 
+    padding: 8px;
+    border: 2px solid #ddd; 
+    border-radius: 4px;
+}
+.input3{
+    width: 70%;
+    padding: 8px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+
+}
+#submit{
+    width: 200px;
+    text-align: center;
+    background-color: blueviolet;
+    padding: 20px;
+    border-radius: 5%;
+    border: 2px solid black;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+table{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+thead{
+    gap: 5%;
+}
+.personal-details{
+padding: 52px; 
+text-align: left;
+border: 2px solid #ddd; 
+
+}
