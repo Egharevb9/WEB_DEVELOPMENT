@@ -6,42 +6,33 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="output"></div>
     <script>
         function deliverOrder(order){
             return new Promise(function(resolve, reject){
                 console.log("order loading");
                 setTimeout(() => {
-                    if (math.random() < 0.5){
+                    if (Math.random() < 0.5){
                         resolve("Delivered:", order);
                     }else{
                         reject("Delivery failed", order);
                     }
-                },2000)
+                }, 2000);
             });
         }
     deliverOrder("Jellof rice")
     .then(function(result){
         console.log("result");
-         setTimeout(() => {
-             let order = (" Delivery failed")
-            resolve(order)
-            },1000);
-    // })
-    // .catch(function(error){
-    //     console.log("Error:", error)
-    // });
-    // deliverOrder()
+         document.getElementById("output").innertext = result
+    })
+    .catch(function(error){
+        console.log( error);
+        document.getElementById("output").innerHTML = error
+    });
+    deliverOrder()
 
 
-    //  deliverOrder("Jollof Rice")
-    // .then(function(result) {
-    //     console.log(result);
-    //     document.getElementById("output").innerText = result;
-    // })
-    // .catch(function(error) {
-    //     console.log(error);
-    //     document.getElementById("output").innerText = error;
-    // });
+   
 
 
     </script>
