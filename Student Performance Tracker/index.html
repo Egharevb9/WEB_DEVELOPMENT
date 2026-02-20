@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,24 +45,74 @@
       </form>
     </div>
 
-    <table>
+    <table class="styled-table">
+  <thead>
+    <tr>
+      <th onclick="sortTable('firstName')">First Name ⬍</th>
+      <th onclick="sortTable('middleName')">Middle Name ⬍</th>
+      <th onclick="sortTable('lastName')">Last Name ⬍</th>
+      <th onclick="sortTable('age')">Age ⬍</th>
+      <th onclick="sortTable('class')">Class ⬍</th>
+      <th onclick="sortTable('css')">CSS ⬍</th>
+      <th onclick="sortTable('html')">HTML5 ⬍</th>
+      <th onclick="sortTable('js')">JavaScript ⬍</th>
+      <th onclick="sortTable('average')">Average ⬍</th>
+      <th>Image</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="studentTable"></tbody>
+</table>
+  </div>
+</body>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Performance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Performance Tracker</h1>
+    <form id="studentForm" class="form-card">
+      <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+      <input type="text" id="middleName" name="middleName" placeholder="Middle Name">
+      <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+      <input type="number" id="age" name="age" placeholder="Age" required>
+      <input type="text" id="class" name="class" placeholder="Class" required>
+      <input type="url" id="img" name="img" placeholder="Image URL">
+      <input type="number" id="css" name="css" placeholder="CSS Score" required>
+      <input type="number" id="html" name="html" placeholder="HTML Score" required>
+      <input type="number" id="js" name="js" placeholder="JavaScript Score" required>
+      <button type="submit" class="btn">Add Student</button>
+    </form>
+
+    <table class="styled-table">
       <thead>
         <tr>
-          <th>First Name</th>
-          <th>Middle Name</th>
-          <th>Last Name</th>
-          <th>Age</th>
-          <th>Class</th>
-          <th>CSS</th>
-          <th>HTML5</th>
-          <th>JavaScript</th>
-          <th>Average</th>
+          <th onclick="sortTable('firstName')">First Name ⬍</th>
+          <th onclick="sortTable('middleName')">Middle Name ⬍</th>
+          <th onclick="sortTable('lastName')">Last Name ⬍</th>
+          <th onclick="sortTable('age')">Age ⬍</th>
+          <th onclick="sortTable('class')">Class ⬍</th>
+          <th onclick="sortTable('css')">CSS ⬍</th>
+          <th onclick="sortTable('html')">HTML ⬍</th>
+          <th onclick="sortTable('js')">JavaScript ⬍</th>
+          <th onclick="sortTable('average')">Average ⬍</th>
           <th>Image</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody id="studentTable"></tbody>
     </table>
   </div>
-</body>
+
+  <!-- Load JS at the end so DOM is ready -->
+  <script src="script.js"></script>
 </body>
 </html>

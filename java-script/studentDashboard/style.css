@@ -2,3 +2,78 @@
     padding: 0%;
     margin: 0%;
 }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  background-color: #4C809A
+}
+.sidebar li:hover {
+    padding: 20px;
+  background-color: #13A4EC;
+  transform: scale(1.02);
+}
+
+.sidebar {
+  width: 220px;
+  background-color:#0D171B;
+  color: white;
+  padding: 20px 10px;
+  gap: 5px;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.grades table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.grades th, .grades td {
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+}
+
+.grade-A, .grade-B {
+  color: green;
+}
+
+.grade-C {
+  color: orange;
+}
